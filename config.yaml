@@ -3,7 +3,7 @@ schedule:
   timezone: "Europe/Bratislava"
 
 model:
-  name: "claude-opus-4-5"
+  name: "claude-sonnet-4-6"
   max_tokens: 4096
   temperature: 0.3               # lower = more factual, less creative
 
@@ -162,6 +162,20 @@ signals:
       threads: lennyrachitsky
       twitter: lennysan
 
+  # DuckDuckGo queries for "what people are building with AI"
+  # Focus: project showcases, step-by-step guides, tutorials with screenshots
+  builds_searches:
+    - "\"I built\" AI tool guide 2026"
+    - "\"built with AI\" step by step tutorial blog post"
+    - "AI side project showcase how I built"
+    - "site:dev.to \"I built\" AI"
+    - "site:dev.to AI project tutorial 2026"
+    - "site:indiehackers.com AI tool built"
+    - "site:substack.com AI build guide screenshots"
+    - "\"how I built\" AI agent workflow tutorial"
+    - "\"built an AI\" complete guide walkthrough"
+    - "AI automation workflow tutorial screenshots 2026"
+
   # DuckDuckGo queries used by the general news collector
   # Focus: AI breakthroughs, launches, and research — not funding rounds
   general_news_searches:
@@ -195,6 +209,10 @@ sources:
   general_news:
     enabled: true
     max_results: 10
+    time_range: "w"
+  builds:
+    enabled: true
+    max_results: 5             # per query — fewer but higher quality
     time_range: "w"
   reddit:
     enabled: true

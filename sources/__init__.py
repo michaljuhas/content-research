@@ -3,6 +3,7 @@ from .companies import CompanyNewsCollector
 from .individuals import IndividualPostsCollector
 from .funding import GeneralNewsCollector
 from .reddit import RedditCollector
+from .builds import BuildsCollector
 
 __all__ = [
     "Signal",
@@ -12,4 +13,5 @@ __all__ = [
     "IndividualPostsCollector",
     "GeneralNewsCollector",
     "RedditCollector",
+    "BuildsCollector",
 ]

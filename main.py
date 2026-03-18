@@ -24,6 +24,7 @@ from sources.companies import CompanyNewsCollector
 from sources.individuals import IndividualPostsCollector
 from sources.funding import GeneralNewsCollector
 from sources.reddit import RedditCollector
+from sources.builds import BuildsCollector
 from sources.base import SignalCollection
 from synthesis import prompt_builder, claude_client
 from output import brief_writer
@@ -63,6 +64,8 @@ def collect_all(config: dict, skip_sources: set[str]) -> SignalCollection:
         collectors.append(("general_news", GeneralNewsCollector()))
     if source_cfg.get("reddit", {}).get("enabled", True) and "reddit" not in skip_sources:
         collectors.append(("reddit", RedditCollector()))
+    if source_cfg.get("builds", {}).get("enabled", True) and "builds" not in skip_sources:
+        collectors.append(("builds", BuildsCollector()))
 
     for source_name, collector in collectors:
         logger.info("Collecting from: %s ...", source_name)
@@ -85,6 +88,7 @@ def main():
     parser.add_argument("--no-reddit", action="store_true", help="Skip Reddit source")
     parser.add_argument("--no-general-news", action="store_true", help="Skip general AI news")
     parser.add_argument("--no-individuals", action="store_true", help="Skip individual posts")
+    parser.add_argument("--no-builds", action="store_true", help="Skip AI builds & inspiration")
     parser.add_argument("--config", default="config.yaml", help="Path to config file")
     args = parser.parse_args()
 
@@ -103,6 +107,8 @@ def main():
         skip_sources.add("general_news")
     if args.no_individuals:
         skip_sources.add("individuals")
+    if args.no_builds:
+        skip_sources.add("builds")
 
     # Step 1: Collect signals from all sources
     collection = collect_all(config, skip_sources)

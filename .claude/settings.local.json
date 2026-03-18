@@ -24,7 +24,12 @@
       "Bash(pip3 install:*)",
       "Bash(pip3 uninstall:*)",
       "Bash(python3 -c \"from ddgs import DDGS; print\\(''ddgs OK''\\)\")",
-      "Bash(python3 -c \"import praw, anthropic, dotenv, yaml; print\\(''all OK''\\)\")"
+      "Bash(python3 -c \"import praw, anthropic, dotenv, yaml; print\\(''all OK''\\)\")",
+      "Bash(python3 main.py --no-reddit)",
+      "Bash(grep -v \"^$\")",
+      "Bash(set -a)",
+      "Bash(source .env)",
+      "Bash(set +a)"
     ]
   }
 }
