@@ -92,7 +92,7 @@ def main():
     parser.add_argument("--config", default="config.yaml", help="Path to config file")
     args = parser.parse_args()
 
-    load_dotenv()
+    load_dotenv(override=True)
     config = load_config(args.config)
     setup_logging(config)
 

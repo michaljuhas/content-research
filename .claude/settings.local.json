@@ -29,7 +29,11 @@
       "Bash(grep -v \"^$\")",
       "Bash(set -a)",
       "Bash(source .env)",
-      "Bash(set +a)"
+      "Bash(set +a)",
+      "Bash(python3 -c \"from dotenv import load_dotenv; load_dotenv\\(\\); import os; key = os.getenv\\(''ANTHROPIC_API_KEY''\\); print\\(''Key present:'', bool\\(key\\), ''| Length:'', len\\(key\\) if key else 0\\)\")",
+      "Bash(python3 -c \"from dotenv import load_dotenv; load_dotenv\\(''/Users/michaljuhas/Projects/content-research/.env''\\); import os; key = os.getenv\\(''ANTHROPIC_API_KEY''\\); print\\(''Key present:'', bool\\(key\\), ''| Length:'', len\\(key\\) if key else 0\\)\")",
+      "Bash(python3 -c \":*)",
+      "Bash(python3 main.py --help)"
     ]
   }
 }
