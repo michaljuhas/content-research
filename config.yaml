@@ -1,0 +1,221 @@
+schedule:
+  cron: "0 7 * * 1-5"           # weekdays at 7 AM (reference only; actual scheduling via MCP or launchd)
+  timezone: "Europe/Bratislava"
+
+model:
+  name: "claude-opus-4-5"
+  max_tokens: 4096
+  temperature: 0.3               # lower = more factual, less creative
+
+# Curated signal sources — edit these lists to add/remove tracked entities
+signals:
+  companies:
+    # AI labs — primary signal sources
+    - name: Anthropic
+      domain: anthropic.com
+    - name: OpenAI
+      domain: openai.com
+    - name: Google DeepMind
+      domain: deepmind.google
+    - name: Microsoft AI
+      domain: microsoft.com/en-us/ai
+    - name: Meta AI
+      domain: ai.meta.com
+    - name: xAI
+      domain: x.ai
+    - name: Mistral AI
+      domain: mistral.ai
+    - name: Hugging Face
+      domain: huggingface.co/blog
+    # AI-powered dev tools
+    - name: GitHub Blog
+      domain: github.blog
+      keywords: "Copilot AI"
+    - name: Vercel
+      domain: vercel.com/blog
+    - name: Cursor
+      domain: cursor.com
+    - name: Replit
+      domain: replit.com/blog
+    - name: Perplexity
+      domain: perplexity.ai
+    # AI news media — filtered to AI content
+    - name: TechCrunch AI
+      domain: techcrunch.com
+      keywords: "artificial intelligence"
+    - name: VentureBeat AI
+      domain: venturebeat.com
+      keywords: "AI"
+    - name: The Verge AI
+      domain: theverge.com
+      keywords: "artificial intelligence"
+    - name: MIT Technology Review
+      domain: technologyreview.com
+      keywords: "artificial intelligence"
+    # Business tool companies (for lens-specific signals)
+    - name: HubSpot
+      domain: blog.hubspot.com
+    - name: Salesforce
+      domain: salesforce.com/blog
+    - name: Notion
+      domain: notion.so/blog
+
+  individuals:
+    # AI lab leaders
+    - name: Sam Altman
+      threads: sama
+      twitter: sama
+    - name: Dario Amodei
+      threads: darioamodei
+      twitter: DarioAmodei
+    - name: Greg Brockman
+      twitter: gdb
+    - name: Demis Hassabis
+      twitter: demaboringday
+    # Researchers & educators
+    - name: Andrej Karpathy
+      threads: karpathy
+      twitter: karpathy
+    - name: Yann LeCun
+      twitter: ylecun
+    - name: Ethan Mollick
+      threads: emollick
+      twitter: emollick
+    - name: Andrew Ng
+      twitter: AndrewYNg
+      linkedin: andrewyng
+    - name: Jim Fan
+      twitter: DrJimFan
+    - name: Chip Huyen
+      twitter: chipro
+    # SW engineering & AI builders
+    - name: Boris Cherny
+      threads: borischerny
+    - name: Simon Willison
+      twitter: simonw
+    - name: Swyx
+      twitter: swyx
+    - name: Guillermo Rauch
+      threads: rauchg
+      twitter: rauchg
+    - name: Amjad Masad
+      threads: amasad
+      twitter: aaboringday
+    - name: Pieter Levels
+      twitter: levelsio
+      threads: levelsio
+    - name: Harrison Chase
+      twitter: hwchase17
+    - name: Kent C. Dodds
+      twitter: kentcdodds
+    - name: Logan Kilpatrick
+      twitter: OfficialLoganK
+    - name: Matt Shumer
+      twitter: mattshumer_
+    # AI content creators & commentators
+    - name: Riley Goodside
+      twitter: goodside
+    - name: Rowan Cheung
+      twitter: rowancheung
+      threads: rowancheung
+    - name: Robert Scoble
+      threads: saboringday
+      twitter: Scobleizer
+    - name: Bindu Reddy
+      twitter: bindureddy
+    - name: Alex Albert
+      twitter: alexalbert__
+    - name: Deedy Das
+      twitter: deedydas
+    - name: Daniela Amodei
+      twitter: DanielaAmodei
+    - name: Mustafa Suleyman
+      twitter: mustaboringday
+    # Product & growth leaders
+    - name: Sahil Lavingia
+      threads: shl
+      twitter: shl
+    - name: Dan Shipper
+      twitter: danshipper
+    - name: Aravind Srinivas
+      twitter: AravSrinivas
+    - name: Emad Mostaque
+      twitter: EMostaque
+    - name: Paul Graham
+      twitter: paulg
+    - name: Naval Ravikant
+      twitter: naval
+    - name: Jason Lemkin
+      twitter: jasonlk
+    # Tech leaders & investors
+    - name: Mark Zuckerberg
+      threads: zuck
+    - name: Satya Nadella
+      twitter: sataboringday
+      linkedin: satyanadella
+    - name: Reid Hoffman
+      linkedin: reidhoffman
+      twitter: reidhoffman
+    - name: Sarah Guo
+      twitter: saranormous
+    - name: Lenny Rachitsky
+      threads: lennyrachitsky
+      twitter: lennysan
+
+  # DuckDuckGo queries used by the general news collector
+  # Focus: AI breakthroughs, launches, and research — not funding rounds
+  general_news_searches:
+    - "AI model released 2026"
+    - "AI breakthrough announcement 2026"
+    - "new AI research paper 2026"
+    - "AI product launch 2026"
+    - "GPT Claude Gemini Grok update 2026"
+    - "AI agent tool released 2026"
+
+# Content lenses — used by Claude to tag signals and build the Relevance Map
+content_lenses:
+  - id: recruiting
+    label: "AI in Recruiting & Talent Acquisition"
+  - id: marketing
+    label: "AI in Marketing"
+  - id: sales
+    label: "AI in Sales & Business Development"
+  - id: productivity
+    label: "Personal Productivity with AI"
+
+sources:
+  companies:
+    enabled: true
+    max_results_per_company: 3
+    time_range: "w"              # d=day, w=week, m=month
+  individuals:
+    enabled: true
+    max_results_per_person: 3
+    time_range: "w"
+  general_news:
+    enabled: true
+    max_results: 10
+    time_range: "w"
+  reddit:
+    enabled: true
+    max_results_per_entity: 3   # per company/individual name
+    subreddits:
+      # High-signal AI communities (breakthrough news, model releases)
+      - artificial
+      - MachineLearning
+      - LocalLLaMA
+      - ChatGPT
+      - ClaudeAI
+      - OpenAI
+      - singularity
+      - ArtificialIntelligence
+      # Lens-specific (lower volume but useful for content angles)
+      - recruiting
+      - marketing
+      - sales
+      - productivity
+
+output:
+  briefs_dir: "briefs"
+  logs_dir: "logs"
+  filename_format: "%Y-%m-%d.md"

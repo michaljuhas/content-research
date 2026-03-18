@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip3 --version)",
+      "mcp__scheduled-tasks__list_scheduled_tasks",
+      "Bash(python3 -c \"import praw; print\\(''praw available''\\)\")",
+      "Bash(python3 -c \"import anthropic; print\\(''anthropic available''\\)\")",
+      "Bash(python3 -c \"import yaml; print\\(''yaml available''\\)\")",
+      "Bash(python3 -c \"import requests; print\\(''requests available''\\)\")",
+      "Bash(crontab -l)",
+      "Bash(python3 -c \"import venv; print\\(''''venv ok''''\\)\")",
+      "Read(//Users/michaljuhas/Projects/**)",
+      "Read(//Users/michaljuhas/.claude/**)",
+      "Bash(find /Users/michaljuhas/Projects/content-research -maxdepth 3 -type f \\\\\\(-name *.sh -o -name server.js -o -name index.js -o -name start.js \\\\\\))",
+      "Bash(find /Users/michaljuhas/Projects/content-research/synthesis -type f -name *.py)",
+      "Bash(find /Users/michaljuhas/Projects/content-research/sources -type f -name *.py)",
+      "Bash(grep -E \"package.json|Makefile|Procfile|docker-compose|\\\\.sh$\")",
+      "Bash(.venv/bin/pip install:*)",
+      "Bash(.venv/bin/python -c \"from ddgs import DDGS; print\\(''ddgs import ok''\\)\")",
+      "Bash(.venv/bin/python -c \":*)",
+      "Bash(git config:*)",
+      "Bash(pip install:*)",
+      "Bash(pip uninstall:*)",
+      "Bash(pip3 install:*)",
+      "Bash(pip3 uninstall:*)",
+      "Bash(python3 -c \"from ddgs import DDGS; print\\(''ddgs OK''\\)\")",
+      "Bash(python3 -c \"import praw, anthropic, dotenv, yaml; print\\(''all OK''\\)\")"
+    ]
+  }
+}
