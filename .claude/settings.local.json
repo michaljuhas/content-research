@@ -33,7 +33,9 @@
       "Bash(python3 -c \"from dotenv import load_dotenv; load_dotenv\\(\\); import os; key = os.getenv\\(''ANTHROPIC_API_KEY''\\); print\\(''Key present:'', bool\\(key\\), ''| Length:'', len\\(key\\) if key else 0\\)\")",
       "Bash(python3 -c \"from dotenv import load_dotenv; load_dotenv\\(''/Users/michaljuhas/Projects/content-research/.env''\\); import os; key = os.getenv\\(''ANTHROPIC_API_KEY''\\); print\\(''Key present:'', bool\\(key\\), ''| Length:'', len\\(key\\) if key else 0\\)\")",
       "Bash(python3 -c \":*)",
-      "Bash(python3 main.py --help)"
+      "Bash(python3 main.py --help)",
+      "Read(//Users/michaljuhas/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/43f26d06-2e10-40ec-9b02-06c71267ec22/0be521bf-9eaa-49e0-81ee-458048bc2132/skills/skill-creator/**)",
+      "Bash(python -m scripts.package_skill \"../podcast-script\")"
     ]
   }
 }
