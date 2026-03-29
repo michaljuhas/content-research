@@ -35,7 +35,9 @@
       "Bash(python3 -c \":*)",
       "Bash(python3 main.py --help)",
       "Read(//Users/michaljuhas/Library/Application Support/Claude/local-agent-mode-sessions/skills-plugin/43f26d06-2e10-40ec-9b02-06c71267ec22/0be521bf-9eaa-49e0-81ee-458048bc2132/skills/skill-creator/**)",
-      "Bash(python -m scripts.package_skill \"../podcast-script\")"
+      "Bash(python -m scripts.package_skill \"../podcast-script\")",
+      "Bash(grep -il \"voxtral\\\\|mistral.*tts\\\\|voice clone\\\\|anthropic.*economic\\\\|economic index\\\\|claude code.*auto\\\\|auto mode\\\\|litellm\\\\|supply chain\\\\|ai scientist\\\\|sakana\\\\|peer review\\\\|nature.*paper\\\\|reid hoffman\\\\|enterprise software\\\\|cursor.*self.host\\\\|self.hosted.*cloud\\\\|cursor.*agent\" /Users/michaljuhas/Projects/content-research/podcasts/*.md)",
+      "Bash(python3:*)"
     ]
   }
 }

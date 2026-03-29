@@ -27,6 +27,17 @@ signals:
       domain: mistral.ai
     - name: Hugging Face
       domain: huggingface.co/blog
+    - name: Cohere
+      domain: cohere.com/blog
+    - name: ElevenLabs
+      domain: elevenlabs.io/blog
+    - name: Runway
+      domain: runwayml.com/news
+    - name: Together AI
+      domain: together.ai/blog
+    - name: DeepSeek
+      domain: deepseek.com
+      keywords: "AI model research"
     # AI-powered dev tools
     - name: GitHub Blog
       domain: github.blog
@@ -39,6 +50,13 @@ signals:
       domain: replit.com/blog
     - name: Perplexity
       domain: perplexity.ai
+    - name: LangChain
+      domain: blog.langchain.dev
+    - name: Lovable
+      domain: lovable.dev/blog
+    - name: Warp
+      domain: warp.dev/blog
+      keywords: "AI"
     # AI news media — filtered to AI content
     - name: TechCrunch AI
       domain: techcrunch.com
@@ -52,6 +70,17 @@ signals:
     - name: MIT Technology Review
       domain: technologyreview.com
       keywords: "artificial intelligence"
+    - name: Wired AI
+      domain: wired.com
+      keywords: "artificial intelligence"
+    - name: Ars Technica AI
+      domain: arstechnica.com
+      keywords: "artificial intelligence"
+    - name: a16z
+      domain: a16z.com
+      keywords: "AI"
+    - name: Y Combinator
+      domain: ycombinator.com/blog
     # Business tool companies (for lens-specific signals)
     - name: HubSpot
       domain: blog.hubspot.com
@@ -59,6 +88,11 @@ signals:
       domain: salesforce.com/blog
     - name: Notion
       domain: notion.so/blog
+    - name: Zapier
+      domain: zapier.com/blog
+      keywords: "AI automation"
+    - name: Scale AI
+      domain: scale.com/blog
 
   individuals:
     # AI lab leaders
@@ -88,6 +122,18 @@ signals:
       twitter: DrJimFan
     - name: Chip Huyen
       twitter: chipro
+    - name: Francois Chollet
+      twitter: fchollet
+    - name: Fei-Fei Li
+      twitter: drfeifei
+    - name: Ilya Sutskever
+      twitter: ilyasut
+    - name: Jeremy Howard
+      twitter: jeremyphoward
+    - name: Hamel Husain
+      twitter: HamelHusain
+    - name: Eugene Yan
+      twitter: eugeneyan
     # SW engineering & AI builders
     - name: Boris Cherny
       threads: borischerny
@@ -112,6 +158,12 @@ signals:
       twitter: OfficialLoganK
     - name: Matt Shumer
       twitter: mattshumer_
+    - name: Theo Browne
+      twitter: t3dotgg
+    - name: Linus Ekenstam
+      twitter: LinusEkenstam
+    - name: Ben Tossell
+      twitter: bentossell
     # AI content creators & commentators
     - name: Riley Goodside
       twitter: goodside
@@ -131,6 +183,8 @@ signals:
       twitter: DanielaAmodei
     - name: Mustafa Suleyman
       twitter: mustaboringday
+    - name: Shreya Shankar
+      twitter: sh_reya
     # Product & growth leaders
     - name: Sahil Lavingia
       threads: shl
@@ -161,6 +215,12 @@ signals:
     - name: Lenny Rachitsky
       threads: lennyrachitsky
       twitter: lennysan
+    - name: Garry Tan
+      twitter: garrytan
+    - name: Elad Gil
+      twitter: eladgil
+    - name: Marc Andreessen
+      twitter: pmarca
 
   # DuckDuckGo queries for "what people are building with AI"
   # Focus: project showcases, step-by-step guides, tutorials with screenshots
@@ -175,6 +235,11 @@ signals:
     - "\"how I built\" AI agent workflow tutorial"
     - "\"built an AI\" complete guide walkthrough"
     - "AI automation workflow tutorial screenshots 2026"
+    - "site:medium.com \"I built\" AI project tutorial"
+    - "\"vibe coding\" project built tutorial 2026"
+    - "site:hashnode.dev AI tool build tutorial"
+    - "\"shipped with AI\" product launch indie hacker"
+    - "AI workflow built from scratch no code 2026"
 
   # DuckDuckGo queries used by the general news collector
   # Focus: AI breakthroughs, launches, and research — not funding rounds
@@ -185,6 +250,10 @@ signals:
     - "AI product launch 2026"
     - "GPT Claude Gemini Grok update 2026"
     - "AI agent tool released 2026"
+    - "open source AI model released 2026"
+    - "AI safety alignment research 2026"
+    - "AI hardware chip GPU announcement 2026"
+    - "AI startup launch Series A funding 2026"
 
 # Content lenses — used by Claude to tag signals and build the Relevance Map
 content_lenses:
